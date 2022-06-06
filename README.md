@@ -9,7 +9,20 @@ In order to work properly this job requires having present a secret with credent
 * access_key
 * secret_key
 
-These fields are passed to MinIO client in order to establish connection. This job also requires to have the simulation temporary volume mounted under `/workspace`.
+These fields are passed to MinIO client in order to establish connection. This job also requires to have the simulation temporary volume mounted under `/workspace`. Sample secret should look like this:
+
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: secret3
+type: Opaque
+stringData:
+  endpoint: s3.storage.endpoint.com # https:// is inside the script
+  access_key: <access_key>
+  secret_key: <secret_key>
+```
+
 
 ### Run using Hyperflow Job Executor:
 `hflow-job-execute <task_id> <redis_url>`
