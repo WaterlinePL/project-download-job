@@ -14,6 +14,6 @@ do
     unzip /workspace/$project_name/$model_type/$model_name.zip -d /workspace/$project_name/$model_type/$model_name
     rm /workspace/$project_name/$model_type/$model_name.zip
     if [ $model_type = "hydrus" ]; then
-        mc cp minio/hydrus_shapes/$1-$model_name.npy /workspace/$project_name/hydrus/$model_name.npy
+        mc cp minio/hydrus-shapes/$1_$model_name.npy /workspace/$project_name/hydrus_shapes/$model_name.npy
     fi
 done
