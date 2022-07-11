@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: <download-project-job-template>
+  name: download-project-job-template
 spec:
   template:
     spec:
@@ -11,7 +11,8 @@ spec:
           claimName: <nfs-pvc-name>
       containers:
       - name: download-job
-        image: <download-job-image>
+        image: watermodelling/project-download-job:latest
+        imagePullPolicy: Always
         args: ["hflow-job-execute", "<task_id>", "<redis_url>"]
         env:
         - name: ENDPOINT
