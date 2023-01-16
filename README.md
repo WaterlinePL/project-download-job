@@ -1,4 +1,4 @@
-# Job performing project download
+# [DEPRECATED] Job performing project download
 
 This job downloads all models related to simulation project and unzips it so that simulation may be performed.
 
